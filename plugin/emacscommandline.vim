@@ -40,10 +40,10 @@ let s:mappings = {
    \ 'SearchCommandLine':        ['<C-R>', '<C-F>?'],
    \ 'AbortCommand':             ['<C-G>', '<C-C>']
    \ }
-if !has('gui_running') && !has('nvim')
-    let s:mappings['FirstLineInHistory'][0] = '<Esc><'
-    let s:mappings['LastLineInHistory'][0]  = '<Esc>>'
-endif
+"if !has('gui_running') && !has('nvim')
+    "let s:mappings['FirstLineInHistory'][0] = '<Esc><'
+    "let s:mappings['LastLineInHistory'][0]  = '<Esc>>'
+"endif
 for s:key in keys(s:mappings)
     if !exists('g:EmacsCommandLine' . s:key . 'Disable') || g:EmacsCommandLine{s:key}Disable != 1
         let s:{s:key}MapDefined = exists('g:EmacsCommandLine' . s:key . 'Map')
@@ -370,14 +370,14 @@ let s:functions = {
   \ 'YankLastArg':                 ['<M-.>', '<M-_>'],
   \ 'ToggleExternalCommand':       '<C-Z>'
   \ }
-if !has('gui_running') && !has('nvim')
-    let s:functions['ForwardWord']      = '<Esc>f'
-    let s:functions['BackwardWord']     = '<Esc>b'
-    let s:functions['KillWord']         = '<Esc>d'
-    let s:functions['BackwardKillWord'] = '<Esc><BS>'
-    let s:functions['TransposeWord']    = '<Esc>t'
-    let s:functions['YankLastArg']      = ['<Esc>.', '<Esc>_']
-endif
+"if !has('gui_running') && !has('nvim')
+    "let s:functions['ForwardWord']      = '<Esc>f'
+    "let s:functions['BackwardWord']     = '<Esc>b'
+    "let s:functions['KillWord']         = '<Esc>d'
+    "let s:functions['BackwardKillWord'] = '<Esc><BS>'
+    "let s:functions['TransposeWord']    = '<Esc>t'
+    "let s:functions['YankLastArg']      = ['<Esc>.', '<Esc>_']
+"endif
 for s:key in keys(s:functions)
     if !exists('g:EmacsCommandLine' . s:key . 'Disable') || g:EmacsCommandLine{s:key}Disable != 1
         let s:{s:key}MapDefined = exists('g:EmacsCommandLine' . s:key . 'Map')
